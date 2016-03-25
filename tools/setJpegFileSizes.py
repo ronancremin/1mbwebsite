@@ -24,12 +24,12 @@ def sumFileSizes(files):
 
 
 def setExifComment(filePath, comment):
-    result = call(['exiftool', '-comment=' + comment[:-4], filePath])
+    result = call(['exiftool', '-comment=' + comment[:-4], os.getcwd() + '/' + filePath])
     return True if result == 0 else False
 
 
 def clearExifComment(filePath):
-    result = call(['exiftool', '-comment=', filePath])
+    result = call(['exiftool', '-comment=', os.getcwd() + '/' + filePath])
     return True if result == 0 else False
 
 
