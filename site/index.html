@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <title>1mb website</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+        <!-- Add your site or application content here -->
+        <h1>This is a 1MB website.</h1>
+        <p><em>The web development community was missing a size reference. This site is that reference&mdash;the <a href="http://www.bipm.org/en/bipm/mass/ipk/">International Prototype of the Kilogram</a>, but for web.</em></p>
+        <p>The transfer size of this website is precisely 1MB. That means that the amount of data that actually needs to be transferred to the browser is 1MB.
+        It's worth going into more detail about this because the fine details are important. 
+        First off, 1MB is 1,048,576 bytes (1024<sup>2</sup> or 20<sup>20</sup> bytes),
+        per the <a href="https://en.wikipedia.org/wiki/Megabyte">standard definition</a>. The exact resources that constitute a web
+        page are not fixed, since clients are not obliged to fetch all of them. In this case the 1MB transfer size is reached if the browser
+        downloads all linked images, JavaScript, CSS and the site's favicon (as the vast majority of browsers do). The 1MB transfer
+        size includes the size of the response headers from the web server in its totals, since these are part of the cost of fetching a page.</p>
+        <p>If your web test tool reports anything other than exactly 1MB as the size of this page it is incorrect, or is measuring
+        something a little different. There are some valid reasons for a difference of opinion:</p>
+        <ul>
+            <li>Some tools don't include the response headers in their page size totals. This will affect the total measured size, but not by much since each response
+            header is only about 300 bytes in size, a tiny percentage (0.03%) of the total page weight</li>
+            <li>Tools may leave out certain page resources e.g. JavaScript or the favicon (this is arguably incorrect since it is not how
+            most browsers behave).</li>
+        </ul>
+        <p>There are also some common but less justifiable reasons where page weight tools make mistakes:</p>
+        <ul>
+            <li>Some tools report the uncompressed size of fetched assets. This doesn't make sense since the <em>cost</em> to a user of fetching an asset
+            (in both time and data impact) is a factor of the <em>transfer size</em> of the resource, not the uncompressed size on disk once fetched. </li>
+            <li>Simple under-counting and over-counting</li>
+        </ul>
+        <h2>Technical Notes</h2>
+        <p>The page is served using HTTP 1.1. HTML, JavaScript and CSS resources are gziped before transfer, JPEG images are not. This is standard practice.</p>
+        <p>This page uses a fairly typical mix of HTML, CSS, images and JavaScript. There are no <em>tricky</em> aspects designed to confuse/test
+        tools. User agent request headers are not included in the 1MB total because this component of the page total is more decided by the browser rather than the server. </p>
+        <p>No AJAX requests are utilised.</p>
+        <img src="img/crane2.jpg" alt="crane photo 2"/>
+        <img src="img/crane3.jpg" alt="crane photo 3"/>
+        <img src="img/crane4.jpg" alt="crane photo 4"/>
+        <!--
+        <img src="img/crane1.jpg" alt="crane photo 1"/>
+        -->
+
+        <script src="js/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
