@@ -25,6 +25,7 @@ def sumFileSizes(files):
 
 def setExifComment(filePath, comment):
     result = call(['exiftool', '-comment=' + comment[:-4], os.getcwd() + '/' + filePath])
+    #result = call(['exiftool', '-comment=' + comment, os.getcwd() + '/' + filePath])
     return True if result == 0 else False
 
 
@@ -36,6 +37,7 @@ def clearExifComment(filePath):
 def main():
     if len(sys.argv) < 3:
         print os.path.basename(__file__) + ' <JPEG images> <desired bytesize delta>'
+        print 'Note that JPEGs may need to have comments stripped first to ensure correct result e.g. "exiftool -comment= *.jpg"'
         sys.exit(0)
 
     sourceFiles = sys.argv[1:-1]
@@ -70,7 +72,7 @@ def main():
     remainder = delta - len(sourceFiles[:-1]) * perFileDelta
     print '    adding %d bytes to %s' % (remainder, sourceFiles[-1])
     clearExifComment(sourceFiles[-1])
-    setExifComment(sourceFiles[-1], randomBytes(perFileDelta))
+    setExifComment(sourceFiles[-1], randomBytes(remainder))
 
     newSize = sumFileSizes(sourceFiles)
     print '\nNew total size is %d bytes (%d bytes increase)' % (newSize, newSize - oldSize)
