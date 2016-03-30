@@ -25,7 +25,6 @@ def sumFileSizes(files):
 
 def setExifComment(filePath, comment):
     result = call(['exiftool', '-comment=' + comment[:-4], os.getcwd() + '/' + filePath])
-    #result = call(['exiftool', '-comment=' + comment, os.getcwd() + '/' + filePath])
     return True if result == 0 else False
 
 
@@ -57,9 +56,6 @@ def main():
     else:
         print 'Adding %d bytes over %d files' % (delta, len(sourceFiles))
 
-
-    # set new comment
-    #call(['exiftool', '-comment=' + randomBytes(delta-4), sourceFile])
 
     perFileDelta = int(delta / len(sourceFiles))
     print '  Per file increase is %d' % perFileDelta
