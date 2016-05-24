@@ -1,5 +1,5 @@
 #!/bin/sh
-echo "Payload\tHeaders\tTotal\tCode\tFinal URL"
+echo "Payload\tHeaders\tTotal\tKB\tCode\tFinal URL"
 
 cat site_manifest_live.txt \
 | xargs --max-args=1 -I {} \
@@ -10,11 +10,16 @@ cat site_manifest_live.txt \
 | awk '
     {
         sum = sum + $1 + $2 
-        print $1 "\t" $2 "\t" $1+$2 "\t" $3 "\t" $4
+        printf $1 "\t" $2 "\t" $1+$2 "\t" 
+        printf("%.1f", ($1+$2)/1024)
+        printf "\t" $3 "\t" $4 "\n"
     } 
     END {
-        print "\nTotal page transfer weight including headers: " sum" bytes, " sum/1048576 " MB"
-        print "Desired size is: " 1024 * 1024 " bytes"
-        print "Shortfall is: " 1024 * 1024 - sum " bytes"
+        printf "\nTotal page transfer weight including headers: "
+        printf("%d bytes, ", sum)
+        printf("%.0f KB, ", sum/1024)
+        printf("%.2f MB ", sum/1048576)
+        printf("\nDesired size is: %d bytes", 1024 * 1024)
+        printf("\nShortfall is:    %d bytes\n", 1024 * 1024 - sum)
     }
 '
