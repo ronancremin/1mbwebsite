@@ -9,8 +9,6 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
         <!--
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
         -->
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/pure-min.css">
@@ -19,76 +17,94 @@
     </head>
     <body>
         <div class="pure-g">
-            <div class="pure-u-1-2">
+            <div id="logoPanel" class="pure-u-1-1 pure-u-sm-1-2" style="background-color: #f7f7f7;">
                 <img src="img/1mb_logo.svg" />
             </div>
-            <div class="pure-u-1-24" style="background-color: rgb(250,250,250); color: #777; border-left: thin solid #eee;  box-sizing: border-box;">
+            <div class="pure-u-1-1 pure-u-sm-1-2" style="background-color: #f7f7f7;">
             </div>
-            <div class="pure-u-10-24" style="background-color: rgb(250,250,250); color: #777; ">
-                <h1 class="title">One Megabyte Website</h1>
-                <p><strong>The web development community was missing a size reference. This site is that reference&mdash;the <a href="http://www.bipm.org/en/bipm/mass/ipk/">International Prototype of the Kilogram</a>, but for web.</em></strong></p>
-                <p>The <em>transfer size</em> of this website is precisely 1.0 MB, to the byte.
-                This means that the amount of data that must be transferred over the wire to the browser in order to display this page is 1MB, or 1,048,576 bytes (1024<sup>2</sup> or 2<sup>20</sup> bytes),
-                per the <a href="https://en.wikipedia.org/wiki/Megabyte">standard definition</a>. </p>
-                <p>The exact resources that constitute a web
-                page are not fixed since clients are not obliged to fetch all of them. In the case of this page the 1MB transfer size is reached if the browser
-                downloads all linked images, JavaScript, CSS and the site's favicon (as the vast majority of browsers do). The 1MB transfer
+
+            <div class="pure-u-1-1 pure-u-sm-1-2" style="color: #777; padding: 2em; box-sizing: border-box;">
+                <h1 class="title" style="color: #bc2233">One Megabyte Website</h1>
+                <p>
+                    <strong>
+                        The web development community was missing a page size reference. 
+                        This site is that reference&mdash;the 
+                        <a href="http://www.bipm.org/en/bipm/mass/ipk/">International Prototype of the Kilogram</a>, 
+                        but for web.
+                    </strong>
+                </p>
+
+                <p>The <em>transfer size</em> of this website is precisely 1 MB or 1,048,576 bytes (1024<sup>2</sup> or 2<sup>20</sup> 
+                bytes, <a href="https://en.wikipedia.org/wiki/Megabyte">by definition</a>).
+                Transfer size means the amount of data that must be transferred over the network to the browser in order to display the page fully. </p>
+
+                <p>The exact resources that constitute a web page are not mandatory; clients are not obliged to fetch all of them.
+                In this case the 1 MB transfer size is reached if the browser
+                downloads all linked images, JavaScript, CSS and the site's favicon, as the vast majority of browsers do. The 1 MB transfer
                 size includes the size of the response headers from the web server in its totals, since these are part of the cost of fetching a page.</p>
 
-                <p>If your web test tool reports anything other than exactly 1MB as the size of this page it is incorrect, or is measuring
+                <p>If your web test tool reports anything other than exactly 1 MB as the size of this page it is either incorrect or is measuring
                 something different. There are some valid reasons for a difference of opinion:</p>
+
                 <ul>
-                    <li>Some tools don't include the response headers in their page size totals. This will affect the total measured size, but not by much since each response
-                    header is only about 300 bytes in size, a tiny percentage (0.03%) of the total transfer weight</li>
-                    <li>Tools may leave out certain page resources e.g. JavaScript or the site's favicon (this is arguably incorrect since it is not how
-                    most browsers behave).</li>
-                </ul>
-                <p>There are also some common but less justifiable reasons where page weight measurement tools make mistakes:</p>
-                <ul>
-                    <li>Some tools report the uncompressed size of fetched assets. This is a less useful metric since the <em>cost</em> to a user of fetching an asset
-                    (in both time and data plan impact) is a factor of the <em>transfer size</em> of the resource, not the uncompressed size on disk once fetched. </li>
-                    <li>Simple under-counting and over-counting.</li>
-                    <li>Some entity between your browser and this website is interfering with the content en route.</li>
+                    <li><p>Some tools don't include the response headers in their page size totals. This will affect the total measured size, but not by much since each response
+                    header is only about 300 bytes in size, a tiny percentage (0.03%) of the total transfer weight.</p></li>
+                    <li><p>Tools may leave out page resources e.g. JavaScript or the site's favicon (this is arguably incorrect since it is not how
+                    most browsers behave).</p></li>
+                    <li><p>Some entity between your browser and this website is interfering with the content en route.</p></li>
                 </ul>
 
+                <p>There are two less justifiable reasons why page weight measurement tools make mistakes:</p>
+                <ul>
+                    <li><p>Some tools report the uncompressed size of fetched assets. This is a less useful metric since the cost to a user of fetching an asset
+                    (in both time and data plan impact) is a factor of the transfer size of the resource, not the uncompressed size.</p> </li>
+                    <li><p>Simple under-counting and over-counting.</p></li>
+                </ul>
+
+            </div>
+
+            <div class="pure-u-1-1 pure-u-sm-1-2" style="background-color: #f7f7f7; ">
+            </div>
+
+            <div class="pure-u-1-1 pure-u-sm-1-2" style="">
+                <div class="pure-u-1-1 pure-u-md-1-2 pure-u-sm-5-5" style="float: left;">
+                    <a href="https://www.flickr.com/photos/beegee49/25246248093/in/photolist-EsVBZx-i48zvH-8oc2n3-4QrV-7SFfS-dAR5F-bAvzj-2sQkbK-nPFbrE-7827nu-782877-5CHHJX-dQLu8J-3MA6gd-egy1qK-pNLQzc-z1kJH-cijaHL-7KzTm-efkWJT-7KA3w-9q5HfP-oE7oUx-9UKsz4-BYVhV-scu7wq-4n8Pee-dF49Rg-7SvVbb-4Woe2W-9yZWa9-9X3jEd-4wqsfS-agg2rS-8okexd-7m6FHe-8AwdbW-ouqLSm-3TZRQU-7m3LRj-2BJUSG-38PDzC-dWd3cY-7SvjPG-4Et9sX-pEqX4X-FEiHCS-ex8htU-6bpfW2-9QyjPw">
+                        <img class="pure-img" src="img/bike1.jpg" alt="bike photo 1" title="Image by Flickr user Brian Evans"/>
+                    </a>
+                </div>
+                <div class="pure-u-1-1 pure-u-md-1-2 pure-u-sm-5-5" style="float: left;">
+                    <a href="https://www.flickr.com/photos/gavinbell/535261899/in/photolist-PimHr-4jsNS5-nmxAc-b4sCsx-f67bHy-bN496n-5JbzLc-pAhiwT-4XJsbd-5JfQpb-8MBDdG-7C4tSo-96Y6wd-5qSvNf-t94ZX-cFeMJY-ccUHhm-groP-aESgHA-iXWWi1-8cvjzX-6soQ5-9SyTqB-6rdZDb-7HGNd7-9J5jU3-7vULDG-7f8XXk-p3x45k-8t4YyY-6uWyKu-9QPzaW-6JSNDw-bVxKoV-d7ggjw-8VRrTY-iLAv6-b8nAV2-bdDRcx-4f7ZAr-34wGAr-EGtwZT-3mCpHi-3SVwRV-8VFo1U-ddoCgZ-5hchnT-6mbrQP-d63geE-4PGqmN">
+                        <img class="pure-img" src="img/truck1.jpg" alt="truck photo 1" title="Image by Flickr user Gavin Bell"/>
+                    </a>
+                </div>
+                <div class="pure-u-1-1 pure-u-md-1-2 pure-u-sm-5-5" style="float: left">
+                    <a href="https://www.flickr.com/photos/stupid_dream/10094467493/in/photolist-7ioHza-go1MuZ-6MmW92-8PfJBW-cqd1-7PwU5j-dE3D8V-5toXsw-6kCSqb-7bwUaT-e5Jsi-8UE7EL-7jzT2p-4XmARC-88VR-88Wb-5Ycsfr-pXLLeo-4DYdEj-9mTCvA-mWUJr9-2Yi4bg-fJKU9g-4cVL8D-8Hidng-oL1ck7-8GjtML-dDc89K-JA6ii-9xttwN-7mFDS-dHauz6-bbbQrX-7WNCN1-3JRVAA-dQEgYk-2tGFRC-75o6k-7VppNK-E9UGhj-6qwnWh-gFNmRX-65Xoqe-9eNcWy-32ZBQ5-837BsX-9sHVhk-6eakne-4jQobC-pFma9/">
+                        <img class="pure-img" src="img/vespa1.jpg" alt="vespa photo 3" title="Image by Flickr user Prashant Ram"/>
+                    </a>
+                </div>
+                <div class="pure-u-1-1 pure-u-md-1-2 pure-u-sm-5-5" style="float: left">
+                    <a href="https://www.flickr.com/photos/webethere/8709657798/in/photolist-egDgPL-jaXBPw-9kSVeJ-5NRXFp-5E5Rh8-9yWUDp-8BedfY-5MFwcR-6cGuzJ-756TB6-eMDz5-nBMez-HH9Kv-63b2L1-5tjkCo-5LSrJh-8VMBS2-5JbzLc-fFBNbh-ogzAJB-Q8wkB-6q4ey3-29r7Be-6kX6m1-dBTrmY-e2NZxd-9Df4s2-3f2Hea-aB4XCG-5uZ8ZS-ac8QNX-5hH95z-4SJJi9-4snh74-aF3SEY-dypsgr-2jVyr-dK6kGN-6Eub63-dCfDjH-PBafF-4R5CUg-67AXcy-6AQp3m-7SrFND-oBjnsg-25iUVT-dCg6f6-cvf6Zq-nt4A66/">
+                        <img class="pure-img" src="img/truck2.jpg" alt="truck photo 2" title="Image by Flickr user Carol Mitchell"/>
+                    </a>
+                </div>
+                <div class="pure-u-1-1 pure-u-md-1-2 pure-u-sm-5-5" style="float: left">
+                    <a href="https://www.flickr.com/photos/drjohn01702/10522133955/in/photolist-6vQaDE-ani5tH-xXVxu-9EzfvL-2LyFaQ-8PJEiP-dsi8xD-hLg3eo-emRs35-cRoso-9MGZ1Q-8G27dA-xGSee-9Zuua4-2oe6G1-5N1VHL-797JQT-96Vw3c-6uLmYD-5b7dc-QVoXT-MN5Ug-8omYTE-xx2oyQ-5Bsijs-7L691Q-rdtJHP-pMbGKM-7kX3BL-9nLtL-4wBy5D-5CuuwA-bc7hCX-h2NFQF-dZBnYe-5xkfVg-chVuwA-6mg8Rj-5wfEqk-zKikb-a9zWoJ-4wBy5n-4NorH4-qh8df-eVvbzu-e6daXf-61VWme-4wBy5v-rJwcT-4fkFuh">
+                        <img class="pure-img" src="img/truck3.jpg" alt="truck photo 3" title="Image by Flickr user Gavin Bell"/>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pure-u-1-1 pure-u-sm-1-2" style="background-color: #f7f7f7; ">
+            </div>
+
+            <div class="pure-u-1-1 pure-u-sm-1-2" style="color: #777; padding: 2em; box-sizing: border-box;">
                 <h2>Colophon</h2>
-                <p>The page is served using HTTP 1.1. As is typical, HTML, JavaScript and CSS resources are gziped before transfer, JPEG images are not.</p>
+                <p>The page is served using HTTP 1.1. As is normally the case, HTML, JavaScript and CSS resources are gziped before transfer, JPEG images are not.</p>
                 <p>This page uses a fairly typical mix of HTML, CSS, images and JavaScript. There are no deliberately tricky elements designed to confuse test
-                tools. No responsive image markup is utilised to ensure that the page weight is invariant, regarless of browser and device. User agent request headers are not included in the 1MB total because this component of the page total is more decided by the browser rather than the server. </p>
+                tools. No responsive image markup is utilised to ensure that the page weight is invariant, regardless of browser and device. User agent request 
+                headers are not included in the 1 MB total because this component of the whole is controlled by the browser rather than the server. </p>
                 <p>No AJAX requests are utilised to keep things simple.</p>
-                <p>The static source for this site is available on <a href="https://github.com/ronancremin/1mbwebsite">GitHub</a>.</p>
-            </div>
-            <div class="pure-u-1-24" style="background-color: rgb(250,250,250); color: #777; border-bottom: thin solid #eee; ">
-            </div>
-            <br/>
-
-            <div class="pure-u-5-5" style="background-color: rgb(250,250,250); color: #777; border-left: thin solid #eee;  box-sizing: border-box;">
-                <h2>Gallery</h2>
-                <p>
-                    The following are standard JPEG images to add weight to the page. 
-                </p>
-            </div>
-        </div>
-        <div class="pure-g" >
-            <div class="pure-u-1 pure-u-md-1-2">
-                <a href="https://www.flickr.com/photos/beegee49/25246248093/in/photolist-EsVBZx-i48zvH-8oc2n3-4QrV-7SFfS-dAR5F-bAvzj-2sQkbK-nPFbrE-7827nu-782877-5CHHJX-dQLu8J-3MA6gd-egy1qK-pNLQzc-z1kJH-cijaHL-7KzTm-efkWJT-7KA3w-9q5HfP-oE7oUx-9UKsz4-BYVhV-scu7wq-4n8Pee-dF49Rg-7SvVbb-4Woe2W-9yZWa9-9X3jEd-4wqsfS-agg2rS-8okexd-7m6FHe-8AwdbW-ouqLSm-3TZRQU-7m3LRj-2BJUSG-38PDzC-dWd3cY-7SvjPG-4Et9sX-pEqX4X-FEiHCS-ex8htU-6bpfW2-9QyjPw">
-                    <img class="pure-img" src="img/bike1.jpg" alt="bike photo 1" title="Image by Flickr user Brian Evans"/>
-                </a>
-            </div>
-            <div class="pure-u-1 pure-u-md-1-2">
-                <a href="https://www.flickr.com/photos/gavinbell/535261899/in/photolist-PimHr-4jsNS5-nmxAc-b4sCsx-f67bHy-bN496n-5JbzLc-pAhiwT-4XJsbd-5JfQpb-8MBDdG-7C4tSo-96Y6wd-5qSvNf-t94ZX-cFeMJY-ccUHhm-groP-aESgHA-iXWWi1-8cvjzX-6soQ5-9SyTqB-6rdZDb-7HGNd7-9J5jU3-7vULDG-7f8XXk-p3x45k-8t4YyY-6uWyKu-9QPzaW-6JSNDw-bVxKoV-d7ggjw-8VRrTY-iLAv6-b8nAV2-bdDRcx-4f7ZAr-34wGAr-EGtwZT-3mCpHi-3SVwRV-8VFo1U-ddoCgZ-5hchnT-6mbrQP-d63geE-4PGqmN">
-                    <img class="pure-img" src="img/truck1.jpg" alt="truck photo 1" title="Image by Flickr user Gavin Bell"/>
-                </a>
-            </div>
-            <div class="pure-u-1 pure-u-md-1-2">
-                <a href="https://www.flickr.com/photos/webethere/8709657798/in/photolist-egDgPL-jaXBPw-9kSVeJ-5NRXFp-5E5Rh8-9yWUDp-8BedfY-5MFwcR-6cGuzJ-756TB6-eMDz5-nBMez-HH9Kv-63b2L1-5tjkCo-5LSrJh-8VMBS2-5JbzLc-fFBNbh-ogzAJB-Q8wkB-6q4ey3-29r7Be-6kX6m1-dBTrmY-e2NZxd-9Df4s2-3f2Hea-aB4XCG-5uZ8ZS-ac8QNX-5hH95z-4SJJi9-4snh74-aF3SEY-dypsgr-2jVyr-dK6kGN-6Eub63-dCfDjH-PBafF-4R5CUg-67AXcy-6AQp3m-7SrFND-oBjnsg-25iUVT-dCg6f6-cvf6Zq-nt4A66/">
-                    <img class="pure-img" src="img/truck2.jpg" alt="truck photo 2" title="Image by Flickr user Carol Mitchell"/>
-                </a>
-            </div>
-            <div class="pure-u-1 pure-u-md-1-2">
-                <a href="https://www.flickr.com/photos/drjohn01702/10522133955/in/photolist-6vQaDE-ani5tH-xXVxu-9EzfvL-2LyFaQ-8PJEiP-dsi8xD-hLg3eo-emRs35-cRoso-9MGZ1Q-8G27dA-xGSee-9Zuua4-2oe6G1-5N1VHL-797JQT-96Vw3c-6uLmYD-5b7dc-QVoXT-MN5Ug-8omYTE-xx2oyQ-5Bsijs-7L691Q-rdtJHP-pMbGKM-7kX3BL-9nLtL-4wBy5D-5CuuwA-bc7hCX-h2NFQF-dZBnYe-5xkfVg-chVuwA-6mg8Rj-5wfEqk-zKikb-a9zWoJ-4wBy5n-4NorH4-qh8df-eVvbzu-e6daXf-61VWme-4wBy5v-rJwcT-4fkFuh">
-                    <img class="pure-img" src="img/truck3.jpg" alt="truck photo 3" title="Image by Flickr user Gavin Bell"/>
-                </a>
+                <p>The static source for this site <a href="https://github.com/ronancremin/1mbwebsite">is available on GitHub</a>.</p>
             </div>
         </div>
 
